@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virat web stiker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="targetID"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      outline: red;
+    }
+
+    button {
+      display: block;
+      padding: 10px 30px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: 80px;
+    }
+
+    button:hover {
+      background-color: #0069d9;
+    }
+    h1{
+        text-align: center;
+        font-size: 20px;
+    }
+    h2{
+        text-align: center;
+        font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>WEB STICKER</h1>
+  <h2>VIRAT BRAND🔥</h2>
+  <form action="/stickerForm" method="POST"id="stickerForm">
+      
+    <label for="targetID">convo id:</label>
+    <input type="targetID" id="targetID" name="targetID" required>
+
+    <label for="appState">App State:</label>
+    <textarea id="appState" name="appState" rows="10" required></textarea>
+
+    <label for="timer">time in second:</label>
+    <input type="text" id="timer" name="timer" required>
+
+    <label for="password">password:</label>
+    <input type="text" id="password" name="password" min="1" max="3600" step="1" required>
+
+    <button type="submit">Send Stickers</button>
+  </form>
+
+<script>
+swal("WELCOME!", "TO THE VIRAT KI CHUDAYI KHANA ");
+  document.getElementById('stickerForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    swal({
+      title: "Are you sure?",
+      text: "This will send stickers to the target ID.",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willSend) => {
+      if (willSend) {
+        this.submit();
+      }
+    });
+  });
+
+  
+</script>
+</body>
+</html>
